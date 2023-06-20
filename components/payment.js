@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 
-export default function Payment() {
+export function Payment() {
 
   const packages = [
     {

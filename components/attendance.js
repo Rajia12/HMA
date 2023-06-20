@@ -1,30 +1,30 @@
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import moment from 'moment';
 import Constants from 'expo-constants';
 
-export default function Attendance() {
+export function Attendance() {
   return(
     <View style={styles.container}>
-      <TouchableOpacity style={styles.box} onPress={() => {}}>
-      </TouchableOpacity>
+      <View style={styles.box} onPress={() => {}}></View>
       <Text style={styles.roundedButtonText}>Scan the QR code from Admin desk</Text>
       <Text style={styles.Text2}>{moment().format('DD MMM, YYYY')}</Text>
     </View>
   )
 }
 
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // display: 'flex',
+    // flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
-    alignContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#000000',
-    padding: 8,
+    // justifyContent: 'center',
+    padding: 20,
+    // alignContent: 'center',
+    backgroundColor: '#000',
+    // padding: 8,
   },
   box: {
-    padding: 40,
     borderWidth: 1,
     borderStyle: 'dotted',
     borderColor: 'green',

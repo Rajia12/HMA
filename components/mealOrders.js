@@ -1,7 +1,8 @@
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
+import moment from 'moment';
 
-export default function MealOrder() {
+export function MealOrder() {
   const _orderBreakFast = ()=> {}
   const _orderLunch = ()=> {}
   const _orderDinner = ()=> {}
@@ -12,13 +13,13 @@ export default function MealOrder() {
         items.map((i) => {
           return(
           <TouchableOpacity style={styles.button} onPress={_orderBreakFast}>
-            <Text style={styles.buttonText}>Breakfast</Text>
+            <Text style={styles.buttonText}>{i}</Text>
           </TouchableOpacity>
           )
         })
       }
       <View style={{height: 40}} />
-      <Text style={styles.buttonText}>11 : 46 PM</Text>
+      <Text style={styles.buttonText}>{moment().format('hh:mm a')}</Text>
       <Text style={styles.buttonText2}>Orders open till 30:00 AM</Text>
     </View>
   );
@@ -27,7 +28,6 @@ export default function MealOrder() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#000000',
